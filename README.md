@@ -1,5 +1,5 @@
 # moviescraper
-scrape movie torrents
+scrape movie torrent links
 
 ## Installation
 
