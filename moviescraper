@@ -1,7 +1,7 @@
 #!/bin/sh
 printf 'Enter movie name =>  '
 read query
-# remove punct and lowecase all letters
+# remove punct and lowercase all letters
 querylower=$(echo $query | awk '{print tolower($0)}' | sed 's/[[:punct:]]//g')
 printf 'Enter release year =>  '
 read release_query
