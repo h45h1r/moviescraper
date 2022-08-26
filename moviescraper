@@ -1,5 +1,5 @@
 #!/bin/sh
-printf 'Enter movie name     =>  '
+printf 'Enter movie name   =>  '
 read query
 # remove punct and lowecase all letters
 querylower=$(echo $query | awk '{print tolower($0)}' | sed 's/[[:punct:]]//g')
