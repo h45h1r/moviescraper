@@ -10,7 +10,7 @@ cURL **moviescraper** to your **$PATH** and give execute permissions.
 $ sudo curl -sL "https://raw.githubusercontent.com/h45h1r/moviescraper/master/moviescraper" -o /usr/local/bin/moviescraper
 $ sudo chmod +x /usr/local/bin/moviescraper
 ```
-- To update, just use `curl` again, no need to `chmod` anymore.
+
 - To uninstall, remove `moviescraper` from your **$PATH**
 
 ## License
