@@ -1,6 +1,10 @@
 # moviescraper
 scrape movie torrent links
 
+## Requirements
+
+* [peerflix](https://github.com/mafintosh/peerflix) 
+
 ## Installation
 
 ### cURL
