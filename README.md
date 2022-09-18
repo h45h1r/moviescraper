@@ -1,5 +1,5 @@
 # moviescraper
-scrape movie torrent links
+scrape and stream movie torrent links
 
 ## Requirements
 
