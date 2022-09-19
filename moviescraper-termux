@@ -1,0 +1,35 @@
+#!/bin/sh
+mkdir lnk
+touch /data/data/com.termux/files/home/lnk/link
+touch /data/data/com.termux/files/home/lnk/link2 
+touch /data/data/com.termux/files/home/lnk/link3
+touch /data/data/com.termux/files/home/lnk/link4
+
+echo ''
+printf 'Enter movie name =>  '
+read query
+# remove punct and lowecase all letters
+querylower=$(echo $query | awk '{print tolower($0)}' | sed 's/[[:punct:]]//g')
+printf 'Enter release year =>  '
+read release_query
+append_link=$(echo $querylower $release_query)
+movie=$(echo $append_link | sed -r 's/[A-Za-z0-9_]+/&-/g' | sed 's/ //g' | sed 's/.$//')
+link='https://yts.mx/movies/'$movie
+torrent=$(curl -s ${link} | grep 'yts.mx/torrent/download/' | awk '$2 ~ /^href=/  {print $0}' | awk  -F" " '{ $3=""; $1="";  print $0}' | sed 's/title="//g' | sed 's/Download //g' | sed 's/Torrent.*//'| grep -v ".WEB" | grep -v ".BluRay" | awk '!/720p/ || !a[/720p/]++'|awk '!/1080p/ || !a[/1080p/]++' |awk '!/2160p/ || !a[/2160p/]++' | awk '{print $1, $NF}'|  uniq -u  > /data/data/com.termux/files/home/lnk/link )
+cut -c 7-  /data/data/com.termux/files/home/lnk/link > /data/data/com.termux/files/home/lnk/link2
+awk '$2 !~ "3D"' /data/data/com.termux/files/home/lnk/link2 > /data/data/com.termux/files/home/lnk/link3
+sed -i 's/"/  /g' /data/data/com.termux/files/home/lnk/link3
+#$ awk '{print $0}' file > tmp && mv tmp file
+echo ''
+cat /data/data/com.termux/files/home/lnk/link3
+echo ''
+
+# stream movie in terminal
+while true; do
+	read -p "Would you like to stream this movie? (y/n):  " yn
+    case $yn in
+        [Yy]* ) head -1 /data/data/com.termux/files/home/lnk/link3 | sed 's/"//g' | awk '{ print $1 }' > /data/data/com.termux/files/home/lnk/link4 ; streamlink=$(sed -n '/3D/!p' /data/data/com.termux/files/home/lnk/link4 ) ; peerflix $streamlink  ; rm -rf lnk ; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
