@@ -7,7 +7,7 @@ scrape and stream movie torrent links
 
 ## Installation
 
-### cURL
+
 cURL **moviescraper** to your **$PATH** and give execute permissions.
 
 ```sh
@@ -16,6 +16,13 @@ cURL **moviescraper** to your **$PATH** and give execute permissions.
 ```
 
 - To uninstall, remove `moviescraper` from your **$PATH**
+### For termux
+```sh
+ sudo curl -sL "https://raw.githubusercontent.com/h45h1r/moviescraper/master/moviescraper-termux" -o moviescraper
+ sudo chmod +x moviescraper
+ mv moviescraper /data/data/com.termux/files/usr/bin/
+```
+ 
 
 ## License
 This project is licensed under [GPL-3.0](https://raw.githubusercontent.com/Illumina/licenses/master/gpl-3.0.txt).
