@@ -11,8 +11,8 @@ scrape and stream movie torrent links
 cURL **moviescraper** to your **$PATH** and give execute permissions.
 
 ```sh
-$ sudo curl -sL "https://raw.githubusercontent.com/h45h1r/moviescraper/master/moviescraper" -o /usr/local/bin/moviescraper
-$ sudo chmod +x /usr/local/bin/moviescraper
+ sudo curl -sL "https://raw.githubusercontent.com/h45h1r/moviescraper/master/moviescraper" -o /usr/local/bin/moviescraper
+ sudo chmod +x /usr/local/bin/moviescraper
 ```
 
 - To uninstall, remove `moviescraper` from your **$PATH**
