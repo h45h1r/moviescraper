@@ -12,7 +12,7 @@ if [ "$1" == "help" ]; then
   echo "thee shall not recieve any help"
   exit 0
 fi
-
+rm -rf "/data/data/com.termux/files/usr/tmp/torrent-stream"
 rm -rf "/data/data/com.termux/files/home/lnk"
 mkdir lnk
 touch "/data/data/com.termux/files/home/lnk/link"
