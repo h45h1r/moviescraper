@@ -15,8 +15,8 @@ fi
 
 rm -rf /data/data/com.termux/files/home/lnk
 mkdir /data/data/com.termux/files/home/lnk
-touch /data/data/com.termux/files/home/lnk/link
-touch /data/data/com.termux/files/home/lnk/link2 
+# touch /data/data/com.termux/files/home/lnk/link
+# touch /data/data/com.termux/files/home/lnk/link2 
 
 echo ''
 printf 'Enter movie name =>  '
