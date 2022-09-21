@@ -13,10 +13,10 @@ if [ "$1" == "help" ]; then
   exit 0
 fi
 
-rm -rf lnk
+rm -rf "/data/data/com.termux/files/home/lnk"
 mkdir lnk
-touch /data/data/com.termux/files/home/lnk/link
-touch /data/data/com.termux/files/home/lnk/link2 
+touch "/data/data/com.termux/files/home/lnk/link"
+touch "/data/data/com.termux/files/home/lnk/link2" 
 
 echo ''
 printf 'Enter movie name =>  '
