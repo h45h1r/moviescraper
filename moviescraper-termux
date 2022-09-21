@@ -67,7 +67,7 @@ echo ''
 while true; do
 	read -p "Would you like to stream this movie? (y/n):  " yn
     case $yn in
-        [Yy]* ) cat /data/data/com.termux/files/home/lnk/link | awk '{ print $1 }' | head -n 1 > /data/data/com.termux/files/home/lnk/link2 ; streamlink=$(cat /data/data/com.termux/files/home/lnk/link2 ) ; peerflix $streamlink ; rm -rf /data/data/com.termux/files/home/lnk ; break;;
+        [Yy]* ) cat /data/data/com.termux/files/home/lnk/link | awk '{ print $1 }' | head -n 1 > /data/data/com.termux/files/home/lnk/link2 ; streamlink=$(cat /data/data/com.termux/files/home/lnk/link2 ) ; peerflix $streamlink ; rm -rf /data/data/com.termux/files/home/lnk ; rm -rf /data/data/com.termux/files/usr/tmp/torrent-stream ; break;;
         [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
     esac
