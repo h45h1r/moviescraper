@@ -14,7 +14,7 @@ if [ "$1" == "help" ]; then
 fi
 
 rm -rf /data/data/com.termux/files/home/lnk
-touch /data/data/com.termux/files/home/lnk
+mkdir /data/data/com.termux/files/home/lnk
 touch /data/data/com.termux/files/home/lnk/link
 touch /data/data/com.termux/files/home/lnk/link2 
 
