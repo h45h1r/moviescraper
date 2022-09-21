@@ -2,7 +2,7 @@
 scrape and stream movie torrent links
 
 ## Requirements
-
+* python
 * [peerflix](https://github.com/mafintosh/peerflix) 
 
 ## Installation
@@ -11,16 +11,14 @@ scrape and stream movie torrent links
 cURL **moviescraper** to your **$PATH** and give execute permissions.
 
 ```sh
- sudo curl -sL "https://raw.githubusercontent.com/h45h1r/moviescraper/master/moviescraper" -o /usr/local/bin/moviescraper
- sudo chmod +x /usr/local/bin/moviescraper
+ curl -sL "https://raw.githubusercontent.com/h45h1r/moviescraper/main/install.sh" | bash
 ```
 
 - To uninstall, remove `moviescraper` from your **$PATH**
+- To update, `moviescraper update`
 ### For termux
 ```sh
- curl -sL "https://raw.githubusercontent.com/h45h1r/moviescraper/master/moviescraper-termux" -o moviescraper
- chmod +x moviescraper
- mv moviescraper /data/data/com.termux/files/usr/bin/
+ curl -sL "https://raw.githubusercontent.com/h45h1r/moviescraper/main/install-termux.sh" | bash
 ```
  
 
