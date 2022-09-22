@@ -8,6 +8,11 @@ if [ "$1" == "update" ]; then
   rm -rf /usr/local/bin/moviescraper
   exit 0
 fi
+if [ "$1" == "uninstall" ]; then
+  rm -rf /usr/local/bin/moviescraper
+  echo "Uninstalled successfully."
+  exit 0
+fi
 if [ "$1" == "help" ]; then
   echo "thee shall not recieve any help"
   exit 0
