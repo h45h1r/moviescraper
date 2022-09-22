@@ -15,7 +15,7 @@ scrape and stream movie torrent links
 ```sh
  curl -sL "https://raw.githubusercontent.com/h45h1r/moviescraper/main/install-termux.sh" | bash
 ```
-## Usage
+##
 - To uninstall, remove `moviescraper` from your **$PATH**
 - To update, `moviescraper update`
 
