@@ -25,7 +25,6 @@ append_link=$(echo $querylower $release_query)
 movie=$(echo $append_link | sed -r 's/[A-Za-z0-9_]+/&-/g' | sed 's/ //g' | sed 's/.$//')
 link=\"https://yts.mx/movies/$movie\" 
 
-
 # embedded code
 pylink=$link python3 << END
 from bs4 import BeautifulSoup
@@ -43,7 +42,6 @@ user_agent_list = [
     "Mozilla/5.0 (X11; CrOS x86_64 14816.131.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36",
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"
 ]
-
 user_agent = random.choice(user_agent_list)
 headers = {'User-Agent': user_agent}
 result = requests.get(url,headers=headers)
@@ -68,4 +66,3 @@ while true; do
         * ) echo "Please answer yes or no.";;
     esac
 done
-
