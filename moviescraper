@@ -12,7 +12,7 @@ if [ "$1" == "help" ]; then
   echo "thee shall not recieve any help"
   exit 0
 fi
-
+rm -rf /tmp/torrent-stream
 rm -rf /tmp/link ; rm -rf /tmp/link2
 echo ''
 printf 'Enter movie name =>  '
