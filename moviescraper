@@ -63,7 +63,8 @@ if [ -f /tmp/link ]; then
     echo ''
     cat /tmp/link
 else
-    echo "Movie not currently available"
+    echo "   Movie is currently unavailable or try again."
+    echo ''
     exit
 fi
 echo ''
