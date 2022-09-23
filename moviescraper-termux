@@ -66,6 +66,7 @@ if [ -s /data/data/com.termux/files/home/lnk/link ]; then
     echo ''
     cat /data/data/com.termux/files/home/lnk/link
 else
+    echo ''	
     echo "Movie is currently unavailable or try again. "
     echo ''
     exit
