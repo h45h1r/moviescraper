@@ -59,9 +59,15 @@ for line in page.find_all(["a"], href=True, text=["720p.BluRay","1080p.BluRay","
         print(line.text, file=f)  
 END
 
+if [ -f /tmp/link ]; then
+    echo ''
+    cat /tmp/link
+else
+    echo "Movie not currently available"
+    exit
+fi
 echo ''
-cat /tmp/link
-echo ''
+
 # stream movie
 while true; do
 	read -p "Would you like to stream this movie? (y/n):  " yn
