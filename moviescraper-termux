@@ -3,7 +3,7 @@
 if [ "$1" == "update" ]; then
   echo "updating `basename $0`...."
   mv /data/data/com.termux/files/usr/bin/moviescraper /data/data/com.termux/files/usr/bin/moviescraper-termux.old
-   curl -sL "https://raw.githubusercontent.com/h45h1r/moviescraper/main/install-termux.sh" | bash
+  curl -sL "https://raw.githubusercontent.com/h45h1r/moviescraper/main/install-termux.sh" | bash
   Update completed.
   rm -rf /data/data/com.termux/files/usr/bin/moviescraper-termux.old
   exit 0
@@ -34,17 +34,14 @@ append_link=$(echo $querylower $release_query)
 movie=$(echo $append_link | sed -r 's/[A-Za-z0-9_]+/&-/g' | sed 's/ //g' | sed 's/.$//')
 link=\"https://yts.mx/movies/$movie\" 
 
-
 # embedded code
 pylink=$link python3 << END
 from bs4 import BeautifulSoup
 import requests
 import random
 import os
-
 my_url = os.getenv("pylink")
 url = my_url.replace('"', '')
-
 user_agent_list = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36",
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36",
@@ -52,7 +49,6 @@ user_agent_list = [
     "Mozilla/5.0 (X11; CrOS x86_64 14816.131.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36",
     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"
 ]
-
 user_agent = random.choice(user_agent_list)
 headers = {'User-Agent': user_agent}
 result = requests.get(url,headers=headers)
@@ -65,9 +61,15 @@ for line in page.find_all(["a"], href=True, text=["720p.BluRay","1080p.BluRay","
         print(line.text, file=f)  
 END
 
+if [ -s /data/data/com.termux/files/home/lnk/link ]; then
+    echo ''
+    cat /data/data/com.termux/files/home/lnk/link
+else
+    echo "Movie not currently available"
+    exit
+fi
 echo ''
-cat /data/data/com.termux/files/home/lnk/link
-echo ''
+
 # stream movie
 while true; do
 	read -p "Would you like to stream this movie? (y/n):  " yn
