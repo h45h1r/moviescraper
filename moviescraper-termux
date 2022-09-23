@@ -4,7 +4,8 @@ if [ "$1" == "update" ]; then
   echo "updating `basename $0`...."
   mv /data/data/com.termux/files/usr/bin/moviescraper /data/data/com.termux/files/usr/bin/moviescraper-termux.old
   curl -sL "https://raw.githubusercontent.com/h45h1r/moviescraper/main/install-termux.sh" | bash
-  Update completed.
+  echo ''
+  echo "Update completed."
   rm -rf /data/data/com.termux/files/usr/bin/moviescraper-termux.old
   exit 0
 fi
