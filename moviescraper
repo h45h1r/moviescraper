@@ -72,8 +72,9 @@ echo ''
 # stream movie
 while true; do
 	read -p "Would you like to stream this movie? (y/n):  " yn
+	read -p "Enter streaming resolution: " resolution
     case $yn in
-        [Yy]* ) cat /tmp/link | awk '{ print $1 }' | head -n 1 >  /tmp/link2 ; streamlink=$(cat /tmp/link2 ) ; peerflix $streamlink ; rm -rf /tmp/link && rm -rf /tmp/link2 ; rm -rf /tmp/torrent-stream ; break;;
+        [Yy]* ) cat /tmp/link | grep $resolution | awk '{ print $1 }'  >  /tmp/link2 ; streamlink=$(cat /tmp/link2 ) ; peerflix $streamlink ; rm -rf /tmp/link && rm -rf /tmp/link2 ; rm -rf /tmp/torrent-stream ; break;;
         [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
     esac
