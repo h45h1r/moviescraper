@@ -9,7 +9,7 @@ if [ "$1" == "update" ]; then
   rm -rf /data/data/com.termux/files/usr/bin/moviescraper-termux.old
   exit 0
 fi
-if [ "$1" == "help" ]; then
+if [ "$1" == "uninstall" ]; then
   rm -rf /data/data/com.termux/files/usr/bin/moviescraper-termux
   echo "Uninstalled successfully."
   exit 0
