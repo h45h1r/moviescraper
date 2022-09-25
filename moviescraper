@@ -2,7 +2,7 @@
 
 if [ "$1" == "update" ]; then
   echo "updating `basename $0`...."
-  mv newmovie newmovie.old
+  mv moviescraper moviescraper.old
   curl -sL "https://raw.githubusercontent.com/h45h1r/moviescraper/main/install.sh" | bash
   echo ''
   echo "Update complete."
