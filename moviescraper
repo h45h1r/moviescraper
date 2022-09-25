@@ -5,7 +5,7 @@ if [ "$1" == "update" ]; then
   mv moviescraper moviescraper.old
   curl -sL "https://raw.githubusercontent.com/h45h1r/moviescraper/main/install.sh" | bash
   echo ''
-  echo "Update complete."
+  ercho "Update complete."
   rm -rf /usr/local/bin/moviescraper
   exit 0
 fi
