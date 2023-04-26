@@ -3,7 +3,7 @@ scrape and stream movie torrent links
 
 ## Requirements
 * python and pip
-* [peerflix](https://github.com/mafintosh/peerflix) 
+* npm
 
 ## Installation
 
