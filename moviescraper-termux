@@ -54,7 +54,7 @@ user_agent = random.choice(user_agent_list)
 headers = {'User-Agent': user_agent}
 result = requests.get(url,headers=headers)
 page = BeautifulSoup(result.text, "html.parser")
-for line in page.find_all(["a"], href=True, text=["720p.BluRay","1080p.BluRay","2160p.BluRay","720p.WEB","1080p.WEB","2160p.WEB","720p.WEB*","1080p.WEB*"]):
+for line in page.find_all(["a"], href=True, string=["720p.BluRay","1080p.BluRay","2160p.BluRay","720p.WEB","1080p.WEB","2160p.WEB","720p.WEB*","1080p.WEB*"]):
     # link = print(line['href'], end="   ")
     # quality = print(line.text)
     with open("/data/data/com.termux/files/home/lnk/link", "a") as f:
